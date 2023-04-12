@@ -1,7 +1,7 @@
 // Cada modelo se define como una clase que extiende la clase Model de Sequelize, y se relaciona con otros modelos mediante las funciones de asociación de Sequelize.
 const { Sequelize, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('postgres://usuario:password@localhost:5432/food');
+const sequelize = new Sequelize('postgres://usuario:password@localhost:5434/food');
 
 class Receta extends Sequelize.Model {}
 
