@@ -1,3 +1,6 @@
+//! Crea el servidor
+
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -6,7 +9,7 @@ const routes = require('./routes/index.js');
 
 require('./db.js');
 
-const server = express();
+const server = express(); // App
 
 server.name = 'API';
 
@@ -31,5 +34,5 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   console.error(err);
   res.status(status).send(message);
 });
-
+  
 module.exports = server;

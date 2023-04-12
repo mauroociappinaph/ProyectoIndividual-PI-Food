@@ -1,3 +1,5 @@
+//! Inicia la aplicación
+
 //                       _oo0oo_
 //                      o8888888o
 //                      88" . "88
@@ -26,3 +28,4 @@ conn.sync({ force: true }).then(() => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
+
