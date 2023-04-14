@@ -7,11 +7,14 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
 
+// Importación de la base de datos
 require('./db.js');
 
+// Creación del servidor
 const server = express(); // App
-
 server.name = 'API';
+
+// Configuración de Miidlewords.  
 
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
@@ -25,9 +28,13 @@ server.use((req, res, next) => {
   next();
 });
 
+
+// Configurar rutas
+
 server.use('/', routes);
 
-// Error catching endware.
+// Manejo de errores
+
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   const status = err.status || 500;
   const message = err.message || err;
@@ -35,4 +42,5 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(status).send(message);
 });
   
+// Exportación de servidor.
 module.exports = server;

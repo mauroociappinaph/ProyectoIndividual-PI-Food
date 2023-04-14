@@ -13,3 +13,8 @@ router.get('/', async (req, res) => {
 });
 
 module.exports = router
+
+
+// findAll() es proporcionado por Sequelize, 
+//la librería de ORM utilizada en este caso para 
+//interactuar con la base de datos.

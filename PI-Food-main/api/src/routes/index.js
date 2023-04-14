@@ -5,7 +5,7 @@ const recipe = require("./recipe.js");
 const recipes = require("./recipes.js");
 const diet = require("./diets.js");
 
-const router = Router();
+const router = Router(); // router es un enrutador de nivel superior en Express que se utiliza para definir rutas para la aplicación.
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
