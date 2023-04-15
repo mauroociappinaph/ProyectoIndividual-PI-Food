@@ -1,23 +1,16 @@
-const { Router } = require('express');
+const { Router } = require("express");
+
+const {
+  getUsersHandler,
+  getUserHandler,
+  createUserHandler,
+} = require("../handlers/userHandlers");
 
 const usersRouter = Router();
+usersRouter.get("/", getUsersHandler);
 
-const getUsersHandler = (req , res) => {
-    // llamar a la función que obtiene los datos de la BDD
-    //llamar una funcion que obtenga los datos de la API externa
-    //Unir los datos , unificando el formato 
-    //Cuando tenga los datos, responder con los datos
-}
+usersRouter.get("/:id", getUserHandler);
 
-const getUserHandler = (req , res) => {
-res.send ("NIY: Esta ruta trae la info de un usuario determinado")
+usersRouter.post("/", createUserHandler);
 
-} 
-usersRouter.get ("/", getUsersHandler);
-
-usersRouter.get ("/:id", getUserHandler);
-
-const createUserHandler = () => {
-
-}
-
+module.exports = usersRouter;
