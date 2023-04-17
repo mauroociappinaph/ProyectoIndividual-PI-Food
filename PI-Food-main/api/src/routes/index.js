@@ -1,16 +1,14 @@
 const { Router } = require("express");
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-//const recipe = require("./recipe.js");
-// const recipes = require("./recipes.js");
-// const diet = require("./diets.js");
+const recipesRouter = require("./recipesRouter");
+const dietsRouter = require("./dietsRouter");
 
-const router = Router(); // router es un enrutador de nivel superior en Express que se utiliza para definir rutas para la aplicación.
+const mainRouter = Router();
 
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
-//router.use("/recipe", recipe);
-//router.use("/types", diet);
-// router.use("/recipes", recipes);
+mainRouter.use("/recipes", recipesRouter);
+mainRouter.use("/diets", dietsRouter);
 
-module.exports = router;
+mainRouter.get("/", (req, res) => {
+    res.send("Hola, este es el servidor de recetas");
+  });
+
+module.exports = mainRouter;

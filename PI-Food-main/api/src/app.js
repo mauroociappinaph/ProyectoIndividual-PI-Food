@@ -11,7 +11,7 @@ const server = express(); // App
 
 // Configurar rutas
 server.use(morgan("dev"));
-server.use("/", mainRouter);
+server.use(mainRouter);
 
 // Exportación de servidor.
 module.exports = server;
