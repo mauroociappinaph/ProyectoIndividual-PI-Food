@@ -1,7 +1,7 @@
 const { Router } = require("express");
 
 const {
-  getRecipesNameHandler,
+  getRecipesHandler,
   getRecipesIdHandler,
   createRecipesHandler,
 } = require("../handlers/recipesHandlers");
@@ -9,7 +9,7 @@ const {
 const recipesRouter = Router();
 
 recipesRouter.get("/:id", getRecipesIdHandler);
-recipesRouter.get("/", getRecipesNameHandler);
+recipesRouter.get("/",  getRecipesHandler);
 recipesRouter.post("/", createRecipesHandler);
 
 module.exports = recipesRouter;
