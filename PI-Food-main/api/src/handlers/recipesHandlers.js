@@ -1,12 +1,31 @@
 const {
   createRecipesDB,
   getRecipeById,
+  getRecipeByName,
+  getAllRecipes,
+  
 } = require("../controllers/createRecipesControllers");
 
-const getRecipesHandler = (req, res) => {
- 
+const getRecipesHandler = async (req, res) => {
   const { name } = req.query;
-  res.send(`Va a enviar el detalle del  ${name} del usuario`);
+  try {
+    
+    if(name) {
+      const recipeByName = await getRecipeByName(name)
+      res.status(200).json(recipeByName)
+    } else {
+      const response = await getAllRecipes()
+      res.status(200).json(response)
+    }
+
+  } catch (error) {
+    
+  }
+
+
+
+
+  res.send(`Va a enviar el detalle del  ${name} de los usuarios o todos los usuarios`);
 };
 
 const getRecipesIdHandler = async (req, res) => {
@@ -50,6 +69,7 @@ const getDietsHandler = (req, res) => {
 module.exports = {
   getRecipesHandler,
   getRecipesIdHandler,
+  getRecipeByName,
   createRecipesHandler,
   getDietsHandler,
 };
