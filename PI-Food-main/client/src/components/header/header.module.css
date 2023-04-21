@@ -1,0 +1,9 @@
+.header {
+    background-image: url("../../asset/img1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}

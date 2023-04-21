@@ -1,0 +1,51 @@
+ Estilos de la página principal
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+   
+
+
+}
+ 
+  .homeSearchBar {
+    background-color: #f5dd90; /* color secundario */
+    color: #333333; /* color de texto */
+  }
+ 
+  .homeHeader {
+    background-color: #63b598; /* color principal */
+    color: #f8f4f4; /* color de texto */
+ }
+
+  .homeCards {
+    background-color: #f8f4f4; /* color de fondo */
+}
+
+  .homePaginator {
+    background-color: #f8f4f4; /* color de fondo */
+ }
+
+  .homeFooter {
+    background-color: #f27781; /* color de acento */
+   /*  color: #f8f4f4; /* color de texto */
+}
+  
+  .homeH1 {
+    text-align: center;
+    color: #63b598;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+
+  }
+  h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: #63b598;
+  }
