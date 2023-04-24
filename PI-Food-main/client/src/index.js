@@ -2,22 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
-import styles from "./index.css";
+
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App"; // Agregar esta línea de importación
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
-    <Provider store={store}>
-      <App className={styles.homeContainer} />
-      <Link to="/home" className={styles.enlacePersonalizado}>
-        Home
-      </Link>
-      </Provider>
+      <App/>
     </BrowserRouter>
-  </React.StrictMode>,
+  </Provider>,
+
   document.getElementById("root")
 );
 

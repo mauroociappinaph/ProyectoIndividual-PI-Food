@@ -1,6 +1,10 @@
 import styles from "./card.module.css";
 
-function Card() {
+function Card({recipe}) {
+
+
+console.log(recipe);
+
   return (
     <div className={styles.container}>
       <div className={styles["card-container"]}>

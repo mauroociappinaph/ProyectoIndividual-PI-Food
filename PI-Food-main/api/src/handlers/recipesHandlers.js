@@ -9,7 +9,6 @@ const {
 const getRecipesHandler = async (req, res) => {
   const { name } = req.query;
   try {
-    
     if(name) {
       const recipeByName = await getRecipeByName(name)
       res.status(200).json(recipeByName)
@@ -19,7 +18,7 @@ const getRecipesHandler = async (req, res) => {
     }
 
   } catch (error) {
-    
+    res.status(400).json({ error: error.message });
   }
 
 

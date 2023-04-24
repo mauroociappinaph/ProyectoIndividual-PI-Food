@@ -29,14 +29,14 @@ const getRecipeById = async (id, source) => {
 };
 
 const getRecipeByName = async (name) => {
-  const infoAPI = (await axios.get(`https://api.spoonacular.com/recipes/`))
+  const infoAPI = (await axios.get(`https://api.spoonacular.com/recipes`))
     .data;
 
   const recipesAPI = infoCleaner(infoAPI);
 
   const recipeFiltered = recipesAPI.filter((recipe) => recipe.name === name);
 
-  const recipeDb = await Recipes.findAll({ where: { name: name } });
+  const recipeDb = await Recipe.findAll({ where: { name: name } });
 
   return [...recipeFiltered, ...recipeDb];
 };
@@ -55,9 +55,9 @@ const infoCleaner = (array) => {
 };
 
 const getAllRecipes = async () => {
-  const recipesDB = await Recipes.findAll();
+  const recipesDB = await Recipe.findAll();
 
-  const infoAPI = (await axios.get(`https://api.spoonacular.com/recipes/`))
+  const infoAPI = (await axios.get(`https://api.spoonacular.com/recipes?apiKey=${apiKey}`))
     .data;
 
   const recipesAPI = infoCleaner(infoAPI);
