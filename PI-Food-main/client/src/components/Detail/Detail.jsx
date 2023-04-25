@@ -1,6 +1,6 @@
 import "./Detail.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { getRecipes } from "../../../redux/actions";
+import { getRecipes } from "../../redux/actions/actions";
 import { useEffect, useState } from "react";
 
 function Detail() {

@@ -1,9 +1,10 @@
 import styles from "./card.module.css";
+import React from "react";
 
-function Card({recipe}) {
+export default function Card({title , image , summary }) {
 
 
-console.log(recipe);
+
 
   return (
     <div className={styles.container}>
@@ -13,18 +14,15 @@ console.log(recipe);
         <p>X</p>
         </div>
         <div className={styles["container--img"]}>
-          <h1>Img</h1>
+          <img src={image} alt="img not found" width="200px" height="250px"  />
         </div>
         <div className={styles["container--info"]}>
-          <h2>Nombre</h2>
-          <p>Resumen del plato </p>
-          <p>Health Score</p>
-          <p>Paso a Paso </p>
-          <p>Tipo de dietas</p>
+          <h2>{title}</h2>
+          <p>{summary}</p>
         </div>
       </div>
     </div>
   );
 }
 
-export default Card;
+
